@@ -19,7 +19,7 @@ async function typeInSurveyNumber(page, surveyNumber) {
   await page.type('#spl_q_ge_receipt_code_txt', surveyNumber);
 
   await page.click('#buttonNext');
-  await page.waitForTimeout(1000);
+  await page.waitForTimeout(2000);
 }
 
 /**
@@ -30,7 +30,7 @@ async function fillInSatisfaction(page) {
   await page.click('#onf_q_gianteagle_osat_with_store_scale5_5');
 
   await page.click('#onf_q_ge_additional_exp_feedback_yn_2');
-  await page.waitForTimeout(1000);
+  await page.waitForTimeout(2000);
 }
 
 /**
@@ -40,9 +40,9 @@ async function fillInSatisfaction(page) {
  */
 async function typeInCardNumber(page, cardNumber) {
   await page.type('#spl_q_ge_advantage_card_id_txt', cardNumber);
+  await page.waitForTimeout(2000);
 
   await page.click('#buttonNext');
-  await page.waitForTimeout(1000);
 }
 
 /**
@@ -81,13 +81,15 @@ async function routine(debug = false) {
     await typeInSurveyNumber(page, surveyNumber);
     await fillInSatisfaction(page);
 
-    await fs.promises
+    const cardNumber = await fs.promises
       .readFile('.config.json', { encoding: 'utf8', flag: 'r' })
-      .then((result) => {
-        const cardNumber = result.cardNumber;
+      .then((json) => {
+        const data = JSON.parse(json);
+        const cardNumber = data.cardNumber;
 
-        typeInCardNumber(page, cardNumber);
+        return cardNumber;
       });
+    await typeInCardNumber(page, cardNumber);
 
     await browser.close();
   } catch (err) {
@@ -97,4 +99,4 @@ async function routine(debug = false) {
   }
 }
 
-routine((debug = true));
+routine();
