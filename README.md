@@ -1,6 +1,12 @@
 # Automate Filling and Submitting the Giant Eagle Feedback Survey
 
 This repository contains the source code of an web automation tool. Through the command-line interface, the program navigates to the [Medallia Giant Eagle Survey](https://survey3.medallia.com/ge) and completes the survey on the user's behalf.
+<br>
+
+<p align="center">
+<img src = docs/medallia.com.png>
+Medellia Webpage
+</p>
 
 # Installation
 
