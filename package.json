@@ -20,10 +20,10 @@
   "main": "core/autofill.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/etlu03/autofill-core.git"
+    "url": "https://github.com/etlu03/medallia-autofill.git"
   },
   "bugs": {
-    "url": "https://github.com/etlu03/autofill-core/issues"
+    "url": "https://github.com/etlu03/medallia-autofill/issues"
   },
-  "homepage": "https://github.com/etlu03/autofill-core#readme"
+  "homepage": "https://github.com/etlu03/medallia-autofill#readme"
 }
