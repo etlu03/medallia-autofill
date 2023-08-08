@@ -3,7 +3,7 @@ This repository contains the source code of a web automation tool. Through the c
 
 <p align="center">
 <img src = docs/medallia.com.png>
-Medellia Webpage
+Medellia Web Page
 </p>
 
 # Setup
